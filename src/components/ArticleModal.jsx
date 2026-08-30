@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from '@/components/ui/badge.jsx'
 import { BookOpen, Share2, Printer, X } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
+import { assetPath } from '@/lib/assetPath.js'
 
 const ArticleModal = ({ article, articles = [], isOpen, onClose, onViewArticle }) => {
   if (!article) return null
@@ -57,7 +58,7 @@ const ArticleModal = ({ article, articles = [], isOpen, onClose, onViewArticle }
 
         <div className="mt-6 space-y-6">
           <img 
-            src={article.image} 
+            src={assetPath(article.image)} 
             alt={article.title}
             className="w-full h-80 object-cover rounded-2xl shadow-lg"
           />
@@ -122,7 +123,7 @@ const ArticleModal = ({ article, articles = [], isOpen, onClose, onViewArticle }
                     className="group cursor-pointer bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all"
                     onClick={() => onViewArticle(rel)}
                   >
-                    <img src={rel.image} alt={rel.title} className="w-full h-36 object-cover group-hover:scale-105 transition-transform" />
+                    <img src={assetPath(rel.image)} alt={rel.title} className="w-full h-36 object-cover group-hover:scale-105 transition-transform" />
                     <div className="p-4">
                       <h5 className="font-bold text-sm text-gray-800 line-clamp-2 group-hover:text-pink-600">{rel.title}</h5>
                     </div>

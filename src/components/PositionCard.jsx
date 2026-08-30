@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { Eye, Heart } from 'lucide-react'
+import { assetPath } from '@/lib/assetPath.js'
 
 const PositionCard = ({ position, onViewDetails }) => {
   return (
@@ -21,7 +22,7 @@ const PositionCard = ({ position, onViewDetails }) => {
         {position.image && (
           <div className="relative overflow-hidden rounded-lg bg-gray-100">
             <img 
-              src={position.image} 
+              src={assetPath(position.image)} 
               alt={position.title}
               className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
             />

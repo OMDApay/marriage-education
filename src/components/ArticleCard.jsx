@@ -1,13 +1,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { BookOpen } from 'lucide-react'
+import { assetPath } from '@/lib/assetPath.js'
 
 const ArticleCard = ({ article, onViewDetails }) => {
   return (
     <Card className="flex flex-col h-full hover:shadow-xl transition-all duration-300 border-t-4 border-t-green-500">
       <div className="relative h-48 overflow-hidden">
         <img 
-          src={article.image} 
+          src={assetPath(article.image)} 
           alt={article.title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />

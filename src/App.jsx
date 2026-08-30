@@ -16,6 +16,7 @@ import sexualDiseasesChapter from '@/data/sexualDiseases.js'
 import pornMediaLiteracyChapter from '@/data/pornMediaLiteracy.js'
 import tragedyChapter from '@/data/tragedyChapter.js'
 import './App.css'
+import { assetPath } from '@/lib/assetPath.js'
 
 // Import images
 import maleReproductiveAr from './assets/male_reproductive_system_ar.jpg'
@@ -439,7 +440,7 @@ function App() {
                           >
                             <div className="relative h-48 overflow-hidden">
                               <img 
-                                src={chapter.image} 
+                                src={assetPath(chapter.image)} 
                                 alt={chapter.title} 
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                               />
@@ -498,7 +499,7 @@ function App() {
                 <Card className="overflow-hidden border-none shadow-xl rounded-3xl">
                   <div className="relative h-64 md:h-80 overflow-hidden">
                     <img
-                      src={sexualDiseasesChapter.image}
+                      src={assetPath(sexualDiseasesChapter.image)}
                       alt="الأمراض الجنسية: التوعية والوقاية"
                       className="w-full h-full object-cover"
                     />
@@ -541,7 +542,7 @@ function App() {
               <div className="space-y-8">
                 <Card className="overflow-hidden border-none shadow-xl rounded-3xl">
                   <div className="relative h-64 md:h-80 overflow-hidden">
-                    <img src={pornMediaLiteracyChapter.image} alt="لا تصدّق الأفلام الإباحية" className="w-full h-full object-cover" />
+                    <img src={assetPath(pornMediaLiteracyChapter.image)} alt="لا تصدّق الأفلام الإباحية" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                     <div className="absolute bottom-6 right-6 left-6 text-white">
                       <div className="flex items-center gap-2 text-sm font-bold mb-2"><Eye className="h-5 w-5" /> وعي إعلامي وتثقيف زوجي</div>
@@ -577,7 +578,7 @@ function App() {
               <div className="space-y-8">
                 <Card className="overflow-hidden border-none shadow-xl rounded-3xl">
                   <div className="relative h-64 md:h-80 overflow-hidden">
-                    <img src={tragedyChapter.image} alt={tragedyChapter.title} className="w-full h-full object-cover" />
+                    <img src={assetPath(tragedyChapter.image)} alt={tragedyChapter.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                     <div className="absolute bottom-6 right-6 left-6 text-white">
                       <div className="flex items-center gap-2 text-sm font-bold mb-2"><AlertTriangle className="h-5 w-5" /> باب للقراءة المسؤولة</div>

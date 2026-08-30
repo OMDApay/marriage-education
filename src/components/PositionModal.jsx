@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from '@/components/ui/button.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { X, Heart, Star, Info } from 'lucide-react'
+import { assetPath } from '@/lib/assetPath.js'
 
 const PositionModal = ({ position, isOpen, onClose }) => {
   if (!position) return null
@@ -28,7 +29,7 @@ const PositionModal = ({ position, isOpen, onClose }) => {
           {position.image && (
             <div className="text-center">
               <img 
-                src={position.image} 
+                src={assetPath(position.image)} 
                 alt={position.title}
                 className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
                 style={{maxHeight: '300px'}}
