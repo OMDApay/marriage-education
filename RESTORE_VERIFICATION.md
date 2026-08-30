@@ -16,3 +16,11 @@ The browser verification also confirmed that the `الأمراض الجنسية`
 The browser verification confirmed that `نهاية مأساوية لممثلي الأفلام الإباحية؟` loads its 10 responsible-reading articles, uses the tragedy image set, and exposes navigation buttons back to the home page, media-literacy chapter, and sexual-diseases chapter, plus external reference links.
 
 The browser verification opened an article modal successfully and showed the article image, summary, close/print controls, and `التالي` navigation. Clicking `التالي` moved to the next article and exposed both `السابق` and `التالي`, confirming in-chapter article navigation works.
+
+GitHub Pages diagnosis and repair — 2026-08-30
+
+The white page was caused by GitHub Pages serving the Vite source `index.html` from the repository root. That HTML referenced `/src/main.jsx`, which browsers cannot execute as a production bundle. The published build also needed a project base path because the site is hosted at `/marriage-education-website/` rather than at the domain root.
+
+The fix added a configurable Vite base path, a shared `assetPath()` helper for public assets, updated image-rendering components, built with `VITE_BASE_PATH=/marriage-education-website/`, and published the generated `dist` contents to the `main` branch used by the existing legacy Pages configuration. A GitHub Pages workflow was prepared but removed because the current Pages API token did not have permission to switch the existing site from legacy source to workflow source.
+
+Live verification succeeded at https://omdapay.github.io/marriage-education-website/?v=d29e890-2: the +18 gate renders, consent opens the Arabic home page, the header and article images load under the project path, and the 50-position section renders all 50 detail buttons with correctly prefixed asset URLs.
