@@ -24,3 +24,11 @@ The white page was caused by GitHub Pages serving the Vite source `index.html` f
 The fix added a configurable Vite base path, a shared `assetPath()` helper for public assets, updated image-rendering components, built with `VITE_BASE_PATH=/marriage-education-website/`, and published the generated `dist` contents to the `main` branch used by the existing legacy Pages configuration. A GitHub Pages workflow was prepared but removed because the current Pages API token did not have permission to switch the existing site from legacy source to workflow source.
 
 Live verification succeeded at https://omdapay.github.io/marriage-education-website/?v=d29e890-2: the +18 gate renders, consent opens the Arabic home page, the header and article images load under the project path, and the 50-position section renders all 50 detail buttons with correctly prefixed asset URLs.
+
+Disease-chapter image audit — 2026-08-30
+
+The public disease chapter currently renders all 10 article cards and their image URLs resolve under `/marriage-education-website/`. The first three cards use the `verified-web-images` set, while cards 4–10 use `sexual-diseases-images`.
+
+Two legacy curated files were visually checked. `curated-web-images/sd-01.jpg` is a historical scan titled “Modes of Infection” and is not a strong modern cover image. `curated-web-images/sd-02.jpg` is a historical secondary-syphilis illustration with English text and visible clinical facial findings; it should not be reused as a general cover. The disease chapter needs a clean, purpose-matched image set rather than blindly reusing those legacy files.
+
+For the disease-only restoration, the existing `sexual-diseases-images/sd-01.jpg` is a clean educational infographic describing bacteria, viruses, parasites, and transmission. `sexual-diseases-images/sd-02.jpg` is a clean educational infographic showing the clinical stages of syphilis. Both are non-graphic and match the first two disease articles.
