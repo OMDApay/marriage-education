@@ -34,3 +34,7 @@ Two legacy curated files were visually checked. `curated-web-images/sd-01.jpg` i
 For the disease-only restoration, the existing `sexual-diseases-images/sd-01.jpg` is a clean educational infographic describing bacteria, viruses, parasites, and transmission. `sexual-diseases-images/sd-02.jpg` is a clean educational infographic showing the clinical stages of syphilis. Both are non-graphic and match the first two disease articles.
 
 Disease-only restoration result — The disease chapter now uses `sexual-diseases-images/cover.jpg` for its banner, `sd-01.jpg` for the STI overview article, and `sd-02.jpg` for the syphilis stages article. The public GitHub Pages page was reloaded after commit `3cfaa4b`; the browser visibly rendered the new banner and both restored educational images. Direct HTTP checks returned 200 for the cover, all disease images sd-01 through sd-10, and the two verified supplemental disease images.
+
+Expanded disease articles — 2026-08-31
+
+Ten disease articles were rewritten with generated Arabic educational content and integrated into `src/data/sexualDiseases.js`. The quality gate recorded 10 articles, a minimum of 1,882 words per article, and the official-reference section in all 10. Production build succeeded with base path `/marriage-education/`; GitHub Pages build commit `08feb6f` completed successfully. Live browser verification at `https://omdapay.github.io/marriage-education/?expanded=08feb6f-final` showed the disease chapter, its images, and the first article modal with the expanded content rendered.
